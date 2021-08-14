@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add comment with javascript</title>
+    </head>
+    <body>
+        <h1>Add your comment please</h1>
+        <section>
+            <h4>Your Comment</h4>
+            <div id="coment-container">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Distinctio, hic! Repellendus debitis accusamus quaerat vero
+                    officiis, ratione suscipit nesciunt cumque recusandae eius
+                    ut nostrum, perspiciatis libero quisquam veniam quos
+                    obcaecati?
+                </p>
+                <p>
+                    Dignissimos molestiae repellat perferendis maiores quis
+                    aliquam laboriosam, esse fugit eveniet consequatur. Quam
+                    rerum, deserunt quis dolores atque neque debitis modi illum
+                    repellat totam labore esse nihil deleniti odit ea.
+                </p>
+                <p>
+                    Eaque optio architecto quos dolorem ut tenetur repellat vero
+                    aperiam reprehenderit saepe nostrum qui ducimus laboriosam,
+                    unde illum fugiat, magnam amet accusantium voluptate
+                    repudiandae earum officia. Numquam ducimus officiis
+                    deleniti?
+                </p>
+            </div>
+            <div>
+                <textarea name="" id="new-comment" cols="60" rows="4"></textarea
+                ><br />
+                <button id="submit-comment">Post</button>
+            </div>
+        </section>
+
+        <script>
+            // 1. set button evenHandler
+            document
+                .getElementById("submit-comment")
+                .addEventListener("click", function () {
+                    // 2.get user comment
+                    const commentBox = document.getElementById("new-comment");
+                    // const userComment = commentBox.value
+
+                    //3. create comment paragrapg
+                    const newComment = document.createElement("p");
+                    newComment.innerText = commentBox.value;
+
+                    //4.append the comment
+                    const commentContainer =
+                        document.getElementById("coment-container");
+                    commentContainer.appendChild(newComment);
+                    commentBox.value = "";
+                });
+        </script>
+    </body>
+</html>

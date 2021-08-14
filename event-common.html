@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Most common ways</title>
+    </head>
+    <body>
+        <p id="clicking-method"></p>
+        <button onclick="handle()">Just Function</button>
+        <button id="handle-event">Direct addEventListener</button><br /><br />
+        <p id="updated"></p>
+        <input type="text" name="" id="update-field" />
+        <button id="update-name">Update</button>
+
+        <script>
+            //using function
+            function handle() {
+                document.getElementById("clicking-method").innerText =
+                    "set by just using function";
+            }
+
+            // direct
+            document
+                .getElementById("handle-event")
+                .addEventListener("click", function () {
+                    document.getElementById("clicking-method").innerText =
+                        "set by direct eventHandleListener";
+                });
+
+            // update direct
+            document
+                .getElementById("update-name")
+                .addEventListener("click", function () {
+                    const updateField = document.getElementById("update-field");
+                    document.getElementById("updated").innerText = updateField.value
+                    updateField.value = '';
+                });
+        </script>
+    </body>
+</html>

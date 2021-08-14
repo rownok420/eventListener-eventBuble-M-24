@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event listener with different ways</title>
+    </head>
+    <body>
+        <h1 onclick="console.log('h1 is clicked')">Event niya Clickbaji</h1>
+        <button onclick="alert('Event niya Clickbaji')">click Me</button>
+        <button onclick="document.body.style.backgroundColor = 'red'">
+            click Me : Red
+        </button>
+        <button onclick="redbtn()">click Me : Green</button>
+        <button id="make-blur-btn">click Me : Blue</button>
+        <button id="make-yellow-btn">click Me : Yellow</button>
+        <button id="make-pink-btn">click Me : Pink</button>
+        <button id="make-golden-btn">click Me : Golden</button>
+
+        <script>
+            function redbtn() {
+                document.body.style.backgroundColor = "green";
+            }
+
+            const blueBtn = document.getElementById("make-blur-btn");
+            blueBtn.onclick = blueColor;
+            function blueColor() {
+                document.body.style.backgroundColor = "blue";
+            }
+
+            const yellowBtn = document.getElementById("make-yellow-btn");
+            const pinkBtn = document.getElementById("make-pink-btn");
+
+            yellowBtn.onclick = function () {
+                document.body.style.backgroundColor = "yellow";
+            };
+
+            pinkBtn.addEventListener("click", function () {
+                document.body.style.backgroundColor = "pink";
+            });
+
+            document
+                .getElementById("make-golden-btn")
+                .addEventListener("click", function () {
+                    document.body.style.backgroundColor = "goldenrod";
+                });
+        </script>
+    </body>
+</html>
